@@ -1,33 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title  %></title>
+    <title>
+        <%= title %>
+    </title>
+    <script src="https://kit.fontawesome.com/1d176c0d0a.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="/assets/css/home.css">
 </head>
+
 <body>
     <div class="container">
-        <div id="mini-blocks">
-            <div>
-                <h1>ToDo App</h1>
-            </div>
-            <div>
-                <p>Description</p>
-                <input type="text" name="description" id="description" placeholder="What do you need to do?">
-            </div>
-            <div>
-                <div id="category">
 
+        <div>
+            <h1 style="margin: auto;">ToDo App</h1>
+        </div>
+
+        <div id="form-block">
+            <form action="/add-task" id="category_Form">
+
+                <div id="description" class="input-align">
+                    <p>Description</p>
+                    <input type="text" name="description" placeholder="What do you need to do?">
                 </div>
-                <div id="dueDate">
-                    
+
+                <div id="details">
+                    <div id="category" class="input-align">
+                        <label for="catg">Category</label>
+                        <select name="catg" id="catg">
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="school">School</option>
+                            <option value="cleaning">Cleaning</option>
+                            <option value="other">Others</option>
+                        </select>
+                    </div>
+
+                    <div id="dueDate" class="input-align">
+                        <label for="due_date" style="display: block;">Due Date</label>
+                        <input type="date" id="due_date" name="due_date">
+
+                    </div>
                 </div>
-            </div>
+
+                <div id="buttons">
+                    <div>
+                        <button type="button" id="addTask">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Add Task
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button" id="deleteTask">
+                            <i></i>
+                            Delete Task
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+
 
         </div>
-        
-        
+
+        <div id="task-list">
+            <ul>
+                <% for(let i of List){%>
+                    <li>
+
+                    </li>
+                
+                <% } %>
+
+            </ul>
+
+        </div>
+
+
     </div>
 </body>
+
 </html>

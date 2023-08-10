@@ -1,0 +1,116 @@
+body{
+    margin: 15px;
+    margin-top: 0;
+}
+
+
+.container{
+    height: auto;
+    width: 75%;
+    position: relative;
+    left: 10%;
+    text-align: center;   
+    padding: 2rem 0;
+    background-color: lavender;
+    box-shadow: 0 0 10px 6px lightgrey;
+    opacity: 0.8;
+}
+
+
+
+/* Input Form Styling */
+
+#category_Form div{
+    width: 100%;
+    display: inline-flex;
+}
+
+.input-align{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#description{
+    text-align: left;
+    border-top: .1px solid grey;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#category{
+    margin: 10px;
+    margin: 0;
+    border: .1px solid grey;
+    border-left: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#dueDate{
+    margin: 0;
+    border: .1px solid grey;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+input{
+    border: none;
+    width: 90%;
+    height: 50px;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 230;
+    transition: all .5s ease-out;
+}
+input:active{
+    border: none;
+    background-color: grey;
+}
+
+#catg{
+    border: none;
+    margin: 5px;
+    width: 90%;
+    height: 100%;
+    background-color: transparent;
+}
+#catg option{
+    background-color: inherit;
+}
+
+#buttons{
+    position: relative;
+    display: flex;
+    left: 20%;
+    margin: 4% 0;
+}
+#addTask:hover, #deleteTask:hover{
+    box-shadow: 0 0 3px 1px lightseagreen;
+    cursor: pointer;
+}
+
+#addTask{
+    width: 50%;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    padding: 7px;
+    border: none;
+}
+
+#deleteTask{
+    width: 50%;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    padding: 7px;
+    border: none;
+    background: radial-gradient(circle, rgba(63,94,251,.5) 0%, rgba(252,70,107,.5) 100%);
+}
+
+
+
+/*  */

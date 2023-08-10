@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^7.4.2"
   },
   "name": "to-do-list",
   "version": "1.0.0",
   "description": "A sleek yet simple to-do list app made using html css and js for frontend and, express and nodejs for backend. ",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

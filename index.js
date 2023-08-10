@@ -1,11 +1,11 @@
 const express = require('express');
+const app = express();
 const path = require('path');
 const port = 3000;
 
 const db = require('./config/mongoose');
 const toDoList = require('./models/toDoList');
 
-const app = express();
 
 var List = {};
 
