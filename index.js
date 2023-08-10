@@ -7,7 +7,13 @@ const db = require('./config/mongoose');
 const toDoList = require('./models/toDoList');
 
 
-var List = {};
+var List = [
+    {
+        description : "Eat Lunch",
+        category : "persoanl",
+        date: "11/03/2022"
+    }
+];
 
 app.get('/', require('./routes/index'));
 app.set('view engine', 'ejs');
