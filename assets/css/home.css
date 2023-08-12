@@ -1,7 +1,9 @@
+/* global stylings */
+
 body{
     margin: 15px;
     margin-top: 0;
-    background-color: rgb(112, 207, 209);
+    background-color: rgb(138, 210, 234);
 }
 
 
@@ -67,6 +69,7 @@ input{
     font-weight: 230;
     transition: all .5s ease-out;
 }
+
 input:active{
     border: none;
     background-color: grey;
@@ -79,18 +82,29 @@ input:active{
     height: 100%;
     background-color: transparent;
 }
+
 #catg option{
     background-color: inherit;
 }
 
 #buttons{
     position: relative;
-    display: flex;
-    left: 20%;
+    /* display: flex; */
+    left: 10%;
     margin: 4% 0;
 }
+
+button {
+    border: none;
+    background-color: transparent;
+    height: 2rem;
+    box-shadow: 0px 0px 4px 1px cornflowerblue;
+    position: relative;
+    top: 7px;
+}
+
 #addTask:hover, #deleteTask:hover{
-    box-shadow: 0 0 3px 1px lightseagreen;
+    box-shadow: 1px 1px 8px 2px lightseagreen;
     cursor: pointer;
 }
 
@@ -114,4 +128,74 @@ input:active{
 
 
 
-/*  */
+/* Tasks display styling */
+
+#task-view{
+    padding: 3%;
+}
+
+ul li {
+    list-style: none;
+    width: 95%;
+    box-shadow: 2px 3px 7px 0px lightseagreen;
+}
+
+#task-list{
+    display: flex;
+}
+
+#task-list input{
+    width: 15px;
+}
+
+#tasks-log {
+    width: 70%;
+    padding: 10px;
+}
+
+#tasks-log p{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin: 5px;
+}
+
+#categored{
+    width: 15%;
+    margin: 30px;
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 1px 1px 3px 5px lightgreen;
+}
+
+
+
+
+
+
+/* Custom Css for different categories based */
+
+/* 
+
+.personal-category {
+  background-color: #ff9999; 
+}
+
+.work-category {
+  background-color: #99ccff; 
+}
+
+.school-category {
+  background-color: #ffcc66; 
+}
+
+.cleaning-category{
+    background-color: #ffaa22;
+}
+
+.others-category{
+    background-color: #ccaa22;
+}
+
+
+*/

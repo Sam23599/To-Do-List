@@ -1,14 +1,13 @@
 // handling the add and delete actions by routing method
 
-
 document.getElementById("addTask").addEventListener("click", function () {
-    
+
     // Update the form's action attribute to route to the "add-task" controller
     document.getElementById("category_Form").action = "/operations/add-task";
-    
+
     // Submit the form
     document.getElementById("category_Form").submit();
-    
+
 });
 
 
@@ -22,6 +21,7 @@ document.getElementById("deleteTask").addEventListener("click", function () {
         return;
     }
 
+    //  Get all the values of the IDs and store them in array format for convinent server-side handling
     const taskIdsToDelete = Array.from(checkboxes).map(checkbox => checkbox.value);
 
     // Create a hidden input field to send the selected task IDs
@@ -44,6 +44,28 @@ document.getElementById("deleteTask").addEventListener("click", function () {
 
 
 
+// Custom css based on different categories
+
+/*
+
+function getCategoryClass(category) {
+    switch (category) {
+        case 'personal':
+            return 'personal-category';
+        case 'work':
+            return 'work-category';
+        case 'school':
+            return 'school-category';
+        case 'cleaning':
+            return 'cleaning-category';
+        case 'others':
+            return 'others-category';
+        default:
+            return ''; // Default class if no specific match
+    }
+}
+
+*/
 
 
 
@@ -56,8 +78,14 @@ document.getElementById("deleteTask").addEventListener("click", function () {
 
 
 
-// Directly handling the add and delete actions in this file only and not by through the routes and controllers
-// also the below code is maybe incomplete, some corrections might be needed
+
+
+
+
+
+
+// Directly handling the add and delete actions in this file only and not by through the routes and controllers method
+// also the below code is maybe incomplete, i need to do some corrections
 
 
 /* 
@@ -85,7 +113,6 @@ document.getElementById('addTask').addEventListener('click', () => {
             console.error('Error:', error);
         });
 });
-
 
 
 document.getElementById('deleteTask').addEventListener('click', () => {

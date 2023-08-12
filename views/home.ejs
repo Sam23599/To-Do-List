@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/1d176c0d0a.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/css/home.css">
+    
 </head>
 
 <body>
@@ -19,7 +20,7 @@
             <h1 style="margin: auto;">ToDo App</h1>
         </div>
 
-        <div id="form-block">
+        <div>
             <form action="/add-task" id="category_Form" method="POST">
 
                 <div id="description" class="input-align">
@@ -31,11 +32,11 @@
                     <div id="category" class="input-align">
                         <label for="catg">Category</label>
                         <select name="catg" id="catg">
-                            <option value="personal">Personal</option>
-                            <option value="work">Work</option>
-                            <option value="school">School</option>
-                            <option value="cleaning">Cleaning</option>
-                            <option value="other">Others</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="School">School</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="Other">Others</option>
                         </select>
                     </div>
 
@@ -55,7 +56,7 @@
                     </div>
                     <div class="delete-button">
                         <button type="button" id="deleteTask">
-                                <i class="fa-solid fa-eraser" style="color: steelblue;"></i>
+                            <i class="fa-solid fa-eraser" style="color: white;"></i>
                             Delete Task
                         </button>
                     </div>
@@ -67,27 +68,29 @@
 
         </div>
 
-        <div id="task-list">
+        <div id="tasks-view">
             <ul>
                 <% for( let i of List ) { %>
                     <li>
-                        <div id="task-list">
-                            
-                            <p id="descripted">
-                                <label>
-                                    <input type="checkbox" class="delete-checkbox" name="selectedItems" value="<%= i._id %>">
-                                    <i class="fa-regular fa-address-card" style="font-size: 1.6rem; color: grey; margin-left: 1rem;"></i>
+                        <div id="task-list" >
+                            <input type="checkbox" class="delete-checkbox" name="selectedItems" value="<%= i._id %>">
+
+                            <div id="tasks-log">
+                                <p id="descripted">
+                                    <i class="fa-regular fa-address-card"
+                                        style="font-size: 1.6rem; color: grey; margin: 0 0.5rem;"></i>
                                     <%= i.description %>
-                                </label>
-                            </p>
-                            <p id="dated">
-                                <%= i.date %>
-                            </p>
+                                </p>
+                                <p id="dated">
+                                    <%= i.date.toLocaleDateString('en-US', { year: 'numeric' , month: 'long' ,
+                                        day: 'numeric' }) %>
+                                </p>
+                            </div>
                             <p id="categored">
                                 <%= i.category %>
                             </p>
                         </div>
-                        
+
                     </li>
                     <% } %>
 
@@ -98,6 +101,7 @@
 
     </div>
 
+    
     <script type="module" src="/js/home.js"></script>
 </body>
 
