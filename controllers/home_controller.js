@@ -1,6 +1,7 @@
 const toDoList = require('../models/toDoList');
 
 module.exports.homePage = async function(req, res){
+
     try {
         const listItems = await toDoList.find({});
         return res.render('home', {

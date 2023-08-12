@@ -4,14 +4,14 @@ const ListSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    date: {
-        type: Date,
-        required: true
-    },
     category: {
         type: String,
         required: true
     },
+    date: {
+        type: Date,
+        required: true
+    }
 }, {
     timestamps: true
 });

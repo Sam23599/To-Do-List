@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb://localhost:27017/my_todo_db';
+const mongoURI = 'mongodb://127.0.0.1:27017/my_todo_db';
 
 const db = mongoose.connection;
+mongoose.connect(mongoURI);
 
 db.on('error', (err)=>{
     console.log('MongoDb connection error', err);
@@ -12,3 +13,4 @@ db.once('open', ()=>{
 });
 
 module.exports = db;
+
