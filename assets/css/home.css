@@ -15,7 +15,7 @@ body{
     text-align: center;   
     padding: 2rem 0;
     background-color: lightyellow;
-    box-shadow: 0 0 10px 6px lightgrey;
+    box-shadow: 0 0 10px 6px rgb(145, 144, 144);
     opacity: 0.8;
 }
 
