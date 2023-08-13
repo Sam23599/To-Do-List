@@ -2,32 +2,35 @@
 <html lang="en">
 
 <head>
+    <!-- Meta information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= title %>
-    </title>
+    <title><%= title %></title>
+    <!-- FontAwesome icons library -->
     <script src="https://kit.fontawesome.com/1d176c0d0a.js" crossorigin="anonymous"></script>
-
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="/css/home.css">
-    
 </head>
 
 <body>
     <div class="container">
 
+        <!-- App header -->
         <div>
             <h1 style="margin: auto;">ToDo App</h1>
         </div>
 
+        <!-- Form for adding tasks -->
         <div>
             <form action="/add-task" id="category_Form" method="POST">
 
+                <!-- Description input -->
                 <div id="description" class="input-align">
                     <p>Description</p>
                     <input type="text" name="description" placeholder="What do you need to do?">
                 </div>
 
+                <!-- Category and due date inputs -->
                 <div id="details">
                     <div id="category" class="input-align">
                         <label for="catg">Category</label>
@@ -43,10 +46,10 @@
                     <div id="dueDate" class="input-align">
                         <label for="due_date" style="display: block;">Due Date</label>
                         <input type="date" id="due_date" name="due_date">
-
                     </div>
                 </div>
 
+                <!-- Add and delete task buttons -->
                 <div id="buttons">
                     <div class="add-button">
                         <button type="button" id="addTask">
@@ -63,45 +66,38 @@
                 </div>
 
             </form>
-
-
-
         </div>
 
+        <!-- Displaying tasks -->
         <div id="tasks-view">
             <ul>
-                <% for( let i of List ) { %>
-                    <li>
-                        <div id="task-list" >
-                            <input type="checkbox" class="delete-checkbox" name="selectedItems" value="<%= i._id %>">
-
-                            <div id="tasks-log">
-                                <p id="descripted">
-                                    <i class="fa-regular fa-pen-to-square"
-                                        style="font-size: 1.6rem; color: grey; margin: 0 0.5rem;"></i>
-                                    <%= i.description %>
-                                </p>
-                                <p id="dated">
-                                    <%= i.date.toLocaleDateString('en-US', { year: 'numeric' , month: 'long' ,
-                                        day: 'numeric' }) %>
-                                </p>
-                            </div>
-                            <p id="categored">
-                                <%= i.category %>
+                <% for (let i of List) { %>
+                <li>
+                    <div id="task-list">
+                        <!-- Checkbox for task deletion -->
+                        <input type="checkbox" class="delete-checkbox" name="selectedItems" value="<%= i._id %>">
+                        <!-- Task details -->
+                        <div id="tasks-log">
+                            <p id="descripted">
+                                <i class="fa-regular fa-pen-to-square" style="font-size: 1.6rem; color: grey; margin: 0 0.5rem;"></i>
+                                <%= i.description %>
+                            </p>
+                            <p id="dated">
+                                <!-- Formatting the task date -->
+                                <%= i.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
                             </p>
                         </div>
-
-                    </li>
-                    <% } %>
-
+                        <!-- Task category -->
+                        <p id="categored">
+                            <%= i.category %>
+                        </p>
+                    </div>
+                </li>
+                <% } %>
             </ul>
-
         </div>
-
-
     </div>
-
-    
+    <!-- Link to external JavaScript file -->
     <script type="module" src="/js/home.js"></script>
 </body>
 

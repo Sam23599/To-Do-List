@@ -1,18 +1,19 @@
-/* global stylings */
+/* Global stylings */
 
-body{
+/* Body styles */
+body {
     margin: 15px;
     margin-top: 0;
     background-color: rgb(138, 210, 234);
 }
 
-
-.container{
+/* Container styles */
+.container {
     height: auto;
     width: 75%;
     position: relative;
     left: 10%;
-    text-align: center;   
+    text-align: center;
     padding: 2rem 0;
     background-color: lightyellow;
     box-shadow: 0 0 10px 6px rgb(145, 144, 144);
@@ -23,25 +24,29 @@ body{
 
 /* Input Form Styling */
 
-#category_Form div{
+/* Form container styles */
+#category_Form div {
     width: 100%;
     display: inline-flex;
 }
 
-.input-align{
+/* Input alignment styles */
+.input-align {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-#description{
+/* Description input styles */
+#description {
     text-align: left;
     border-top: .1px solid grey;
     padding: 10px;
     box-sizing: border-box;
 }
 
-#category{
+/* Category input styles */
+#category {
     margin: 10px;
     margin: 0;
     border: .1px solid grey;
@@ -50,7 +55,8 @@ body{
     box-sizing: border-box;
 }
 
-#dueDate{
+/* Due date input styles */
+#dueDate {
     margin: 0;
     border: .1px solid grey;
     border-left: none;
@@ -59,8 +65,8 @@ body{
     box-sizing: border-box;
 }
 
-
-input{
+/* Shared input styles */
+input {
     border: none;
     width: 90%;
     height: 50px;
@@ -70,12 +76,14 @@ input{
     transition: all .5s ease-out;
 }
 
-input:active{
+/* Active state styles for input */
+input:active {
     border: none;
     background-color: grey;
 }
 
-#catg{
+/* Category selection styles */
+#catg {
     border: none;
     margin: 5px;
     width: 90%;
@@ -83,17 +91,20 @@ input:active{
     background-color: transparent;
 }
 
-#catg option{
+/* Styling for category options */
+#catg option {
     background-color: inherit;
 }
 
-#buttons{
+/* Button container styles */
+#buttons {
     position: relative;
     /* display: flex; */
     left: 10%;
     margin: 4% 0;
 }
 
+/* Button styles */
 button {
     border: none;
     background-color: transparent;
@@ -103,12 +114,14 @@ button {
     top: 7px;
 }
 
-#addTask:hover, #deleteTask:hover{
+/* Hover styles for buttons */
+#addTask:hover, #deleteTask:hover {
     box-shadow: 1px 1px 8px 2px lightseagreen;
     cursor: pointer;
 }
 
-#addTask{
+/* Styles for the "Add Task" button */
+#addTask {
     width: 50%;
     font-size: 1.2rem;
     color: whitesmoke;
@@ -117,7 +130,8 @@ button {
     border: none;
 }
 
-#deleteTask{
+/* Styles for the "Delete Task" button */
+#deleteTask {
     width: 50%;
     font-size: 1.2rem;
     color: whitesmoke;
@@ -130,37 +144,44 @@ button {
 
 /* Tasks display styling */
 
-#task-view{
+/* Task view container styles */
+#task-view {
     padding: 3%;
 }
 
+/* List item styles */
 ul li {
     list-style: none;
     width: 95%;
     box-shadow: 2px 3px 7px 0px lightseagreen;
 }
 
-#task-list{
+/* Task list container styles */
+#task-list {
     display: flex;
 }
 
-#task-list input{
+/* Styles for task checkboxes */
+#task-list input {
     width: 15px;
 }
 
+/* Task log container styles */
 #tasks-log {
     width: 70%;
     padding: 10px;
 }
 
-#tasks-log p{
+/* Styles for task log entries */
+#tasks-log p {
     display: inline-flex;
     align-items: center;
     width: 100%;
     margin: 5px;
 }
 
-#categored{
+/* Category header styles */
+#categored {
     width: 15%;
     margin: 30px;
     padding: 10px;
@@ -175,8 +196,10 @@ ul li {
 
 /* Custom Css for different categories based */
 
-/* 
 
+/* Category-specific background colors */
+
+/*
 .personal-category {
   background-color: #ff9999; 
 }
@@ -196,6 +219,4 @@ ul li {
 .others-category{
     background-color: #ccaa22;
 }
-
-
 */

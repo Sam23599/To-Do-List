@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+
+// Define the schema for the 'List' collection
 const ListSchema = new mongoose.Schema({
     description: {
         type: String,
@@ -13,8 +15,11 @@ const ListSchema = new mongoose.Schema({
         required: true
     }
 }, {
-    timestamps: true
+    timestamps: true // Automatically add 'createdAt' and 'updatedAt' fields
 });
 
+// Create the 'List' model based on the schema
 const List = mongoose.model('List', ListSchema);
+
+// Export the 'List' model to make it available for use in other files
 module.exports = List;

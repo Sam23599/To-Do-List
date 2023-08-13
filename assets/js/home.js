@@ -1,19 +1,15 @@
-// handling the add and delete actions by routing method
-
+// Event listener for the "Add Task" button click
 document.getElementById("addTask").addEventListener("click", function () {
-
     // Update the form's action attribute to route to the "add-task" controller
     document.getElementById("category_Form").action = "/operations/add-task";
 
     // Submit the form
     document.getElementById("category_Form").submit();
-
 });
 
-
-
+// Event listener for the "Delete Task" button click
 document.getElementById("deleteTask").addEventListener("click", function () {
-    // Get all the boxes that are checked for deletion 
+    // Get all the checkboxes that are checked for deletion
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
 
     if (checkboxes.length === 0) {
@@ -21,7 +17,7 @@ document.getElementById("deleteTask").addEventListener("click", function () {
         return;
     }
 
-    //  Get all the values of the IDs and store them in array format for convinent server-side handling
+    // Get all the values of the IDs and store them in an array format for convenient server-side handling
     const taskIdsToDelete = Array.from(checkboxes).map(checkbox => checkbox.value);
 
     // Create a hidden input field to send the selected task IDs
@@ -38,16 +34,25 @@ document.getElementById("deleteTask").addEventListener("click", function () {
 
     // Submit the form
     document.getElementById("category_Form").submit();
-
 });
 
 
 
 
-// Custom css based on different categories
 
+
+
+
+
+
+
+
+
+
+
+
+// Custom CSS classes based on different categories
 /*
-
 function getCategoryClass(category) {
     switch (category) {
         case 'personal':
@@ -64,7 +69,6 @@ function getCategoryClass(category) {
             return ''; // Default class if no specific match
     }
 }
-
 */
 
 
@@ -73,31 +77,14 @@ function getCategoryClass(category) {
 
 
 
+// Directly handling the add and delete actions in this file only and not through the routes and controllers method
+// Note: The below code may require further corrections and adjustments
 
 
-
-
-
-
-
-
-
-
-
-// Directly handling the add and delete actions in this file only and not by through the routes and controllers method
-// also the below code is maybe incomplete, i need to do some corrections
-
-
-/* 
-
-const Tasks = require('../../models/toDoList');
-
-
-
+/*
 document.getElementById('addTask').addEventListener('click', () => {
     const form = document.getElementById('category_Form');
     const formData = new FormData(form);
-
 
     fetch('/operations/add-task', {
         method: 'POST',
@@ -118,30 +105,30 @@ document.getElementById('addTask').addEventListener('click', () => {
 document.getElementById('deleteTask').addEventListener('click', () => {
     // Add delete task functionality here
 
-    const numbers = document.querySelectorAll('input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    const taskIdsToDelete = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-    numbers.forEach(checkbox => {
-        checkbox.addEventListener('change', async function (req, res) {
-            // get the id from query in url
-            let id = req.query.id;
-
-            // find the task in the database using id and delete it
-
-            try {
-                // console.log(id);
-                await Tasks.findByIdAndDelete(id);
-                return res.redirect('back');
-            } catch (error) {
-                console.log('error in deleting from database');
-                return res.redirect('back');
-            }
-
+    // Loop through the selected task IDs and delete them using fetch
+    taskIdsToDelete.forEach(id => {
+        fetch(`/operations/delete-task?id=${id}`, {
+            method: 'DELETE'
         })
-    })
+        .then(response => {
+            if (response.ok) {
+                // Handle successful response
+                console.log(`Task with ID ${id} deleted successfully.`);
+            } else {
+                // Handle unsuccessful response
+                console.error(`Error deleting task with ID ${id}.`);
+            }
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error:', error);
+        });
+    });
 
     console.log('Delete button clicked');
-    // You can perform the delete operation using a similar fetch request
-    // to the appropriate delete route on your backend.
+    // Perform the delete operation using fetch requests to the appropriate delete route on your backend.
 });
-
 */
