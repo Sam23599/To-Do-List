@@ -2,7 +2,9 @@
 const mongoose = require('mongoose');
 
 // Define the MongoDB connection URI
-const mongoURI = 'mongodb://127.0.0.1:27017/my_todo_db'; // Connection URL for the MongoDB database
+// const mongoURI = 'mongodb://127.0.0.1:27017/my_todo_db'; // Connection URL for the MongoDB database
+
+const mongoURI = "mongodb+srv://satyamvirat:9dyxTtIpy4WEyPyF@cluster0.ejooqmr.mongodb.net/?retryWrites=true&w=majority"
 
 // Get the default connection
 const db = mongoose.connection;
